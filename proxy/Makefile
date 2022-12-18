@@ -1,2 +1,4 @@
 proxy:
-	sudo docker-compose up
+	sudo docker-compose up -d
+stop:
+	sudo docker-compose stop
