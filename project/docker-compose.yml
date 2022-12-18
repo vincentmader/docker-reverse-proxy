@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  my-server:
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - ./:/usr/share/nginx/html
+    environment:
+      VIRTUAL_HOST: meinedomain.lo #, other-domain.de, default-domain.de
+      # - DEFAULT_HOST: www.default-domain.de
+      # - VIRTUAL_PORT: 80 # bei rocket 8000
+      # - LETSENCRYPT_HOST: www.default-domain.de # oder *.default-domain.de
+      # - LETSENCRYPT_EMAIL: vincent@mader.xyz
+    networks:
+      - reverse-proxy
+      # - default
+
+networks:
+  reverse-proxy:
+    external: true
+    name: proxy_my_awesome_proxy_network # same name as in `./proxy/docker-compose.yml` + prefix (see "docker network ls")
