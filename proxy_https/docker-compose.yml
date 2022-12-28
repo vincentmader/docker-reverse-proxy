@@ -1,7 +1,7 @@
 version: "2"
 
 services:
-  nginx-proxy:
+  nginx-proxy-https:
     image: jwilder/nginx-proxy
     container_name: nginx-proxy
     restart: always
@@ -26,7 +26,7 @@ services:
     container_name: nginx-proxy-le
     restart: always
     volumes_from:
-            - nginx-proxy
+            - nginx-proxy-https
     volumes:
             - ./certs:/etc/nginx/certs:rw
             - ./vhost.d:/etc/nginx/vhost.d
