@@ -17,8 +17,9 @@ services:
       - ./uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf
     networks:
       - my_awesome_proxy_network
-        acme-companion:
-                image: nginxproxy/acme-companion
+  
+  acme-companion:
+    image: nginxproxy/acme-companion
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
