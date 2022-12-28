@@ -37,7 +37,7 @@ services:
     environment:
             - DEFAULT_EMAIL:vincent@mader.xyz
     networks:
-            - reversed-proxy
+            - my_awesome_proxy_network
 
 networks:
   my_awesome_proxy_network:
