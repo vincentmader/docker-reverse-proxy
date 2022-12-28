@@ -4,4 +4,4 @@ stop:
 	sudo docker-compose stop
 restart:
 	make stop
-	make restart
+	make project
