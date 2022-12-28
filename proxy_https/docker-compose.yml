@@ -1,9 +1,9 @@
 version: "2"
 
 services:
-  nginx-proxy-https:
+  nginx-proxy:
     image: jwilder/nginx-proxy
-    container_name: nginx-proxy-https
+    container_name: nginx-proxy
     restart: always
     ports:
       - 80:80
@@ -14,19 +14,19 @@ services:
       - ./vhost.d:/etc/nginx/vhost.d
       - ./html:/usr/share/nginx/html
       - ./dhparam:/etc/nginx/dhparam
-      - ./uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf
+        # - ./uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf
     networks:
       - my_awesome_proxy_network
   
-  # acme-companion:
-  #   image: nginxproxy/acme-companion
+  acme-companion:
+    image: nginxproxy/acme-companion
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
     container_name: nginx-proxy-le
     restart: always
     volumes_from:
-            - nginx-proxy-https
+            - nginx-proxy
     volumes:
             - ./certs:/etc/nginx/certs:rw
             - ./vhost.d:/etc/nginx/vhost.d
