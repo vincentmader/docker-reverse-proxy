@@ -5,7 +5,7 @@ Running the reverse-proxy:
 cd ./proxy && make proxy
 #+end_src
 
-Running a project calling the proxy:
+Running a template-project calling the proxy:
 #+begin_src shell
-cd ./project && make project
+cd ./template-name && make project
 #+end_src
