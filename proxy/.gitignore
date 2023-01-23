@@ -1,0 +1,5 @@
+certs/
+dhparam/
+acme/
+html/
+vhost.d/
