@@ -35,7 +35,7 @@ services:
             - ./acme:/etc/acme.sh
             # - ./uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf
     environment:
-            - DEFAULT_EMAIL:vincent@mader.xyz
+            - DEFAULT_EMAIL:vincent.mader@icloud.com
     networks:
             - my_awesome_proxy_network
 
