@@ -2,7 +2,7 @@
 
 Running the reverse-proxy:
 #+begin_src shell
-cd ./proxy && make proxy
+cd ./proxy && make start
 #+end_src
 
 Running a template-project calling the proxy:

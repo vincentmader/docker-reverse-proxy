@@ -1,6 +1,6 @@
 http: 
 	cd ./proxy_https && make stop
-	cd ./proxy && make
+	cd ./proxy_http  && make start
 https:
-	cd ./proxy && make stop
-	cd ./proxy_https && make
+	cd ./proxy_http  && make stop
+	cd ./proxy_https && make start

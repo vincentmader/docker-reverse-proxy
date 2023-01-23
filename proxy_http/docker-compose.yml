@@ -1,0 +1,46 @@
+version: "2"
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    # user: "${UID}:${GID}"
+    # user: "0:0"
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      # - ./certs:/etc/nginx/certs:ro
+      # - ./vhost.d:/etc/nginx/vhost.d
+      # - ./html:/usr/share/nginx/html
+      # - ./dhparam:/etc/nginx/dhparam
+      # - ./uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf
+    networks:
+      - my_awesome_proxy_network
+
+  #acme-companion:
+  #        image: nginxproxy/acme-companion
+
+  #letsencrypt:
+  #  image: jrcs/letsencrypt-nginx-proxy-companion
+  #  container_name: nginx-proxy-le
+  #  restart: always
+  #  volumes_from:
+  #          - nginx-proxy
+  #  volumes:
+  #          - ./certs:/etc/nginx/certs:rw
+  #          - ./vhost.d:/etc/nginx/vhost.d
+  #          - ./html:/usr/share/nginx/html
+  #          - /var/run/docker.sock:/var/run/docker.sock:ro
+  #          - ./acme:/etc/acme.sh
+  #            #- ./uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf
+  #  environment:
+  #          - DEFAULT_EMAIL:vincent@mader.xyz
+  #  networks:
+  #          - reversed-proxy
+
+networks:
+  my_awesome_proxy_network:
+    driver: bridge
