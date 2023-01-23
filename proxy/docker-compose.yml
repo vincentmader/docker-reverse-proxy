@@ -14,12 +14,12 @@ services:
       - ./vhost.d:/etc/nginx/vhost.d
       - ./html:/usr/share/nginx/html
       - ./dhparam:/etc/nginx/dhparam
-        # - ./uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf
+      - ./uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf
     networks:
       - my_awesome_proxy_network
   
-  acme-companion:
-    image: nginxproxy/acme-companion
+  # acme-companion:
+  #   image: nginxproxy/acme-companion
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
