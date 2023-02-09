@@ -1,11 +1,8 @@
 * Reverse-Proxy via Docker
 
-Running the reverse-proxy:
+The reverse-proxy server can be started via
 #+begin_src shell
-cd ./proxy && make start
+make start
 #+end_src
 
-Running a template-project calling the proxy:
-#+begin_src shell
-cd ./template-name && make project
-#+end_src
+To connect it to a project, configure the project's network to include the reverse-proxy (in `docker-compose.yml`).
