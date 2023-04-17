@@ -2,7 +2,7 @@
 
 The reverse-proxy server can be started via
 #+begin_src shell
-make start
+make up
 #+end_src
 
 To connect it to a project, configure the project's network to include the reverse-proxy (in `docker-compose.yml`).
