@@ -1,7 +1,9 @@
 restart:
 	sudo docker-compose stop
 	sudo docker-compose up -d --build
-start:
+up:
 	sudo docker-compose up -d --build
-stop:
+down:
 	sudo docker-compose stop
+logs:
+	docker-compose logs -f -t
