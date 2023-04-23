@@ -16,7 +16,7 @@ services:
       - ./dhparam:/etc/nginx/dhparam
         # - ./uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf
     networks:
-      - my_awesome_proxy_network
+      - mxyz_proxy_network
   
   # acme-companion:
   #   image: nginxproxy/acme-companion
@@ -37,8 +37,8 @@ services:
     environment:
             - DEFAULT_EMAIL:vincent.mader@icloud.com
     networks:
-            - my_awesome_proxy_network
+            - mxyz_proxy_network
 
 networks:
-  my_awesome_proxy_network:
+  mxyz_proxy_network:
     driver: bridge
