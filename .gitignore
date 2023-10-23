@@ -3,3 +3,4 @@ dhparam/
 acme/
 html/
 vhost.d/
+._*
